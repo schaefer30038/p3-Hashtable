@@ -1,0 +1,39 @@
+This test was run on a 2017 MacBook Pro with a 3.1GHz Intel Core i5
+
+IntegerSmall.txt
+Get takes longer for the this file because even though it takes constant time
+for the HashTable to get the value at an index, it takes more time to compute
+the hash index compared to finding a value in a TreeMap, since it only has 100
+values. Likewise, put takes less time for the TreeMap because it is a small tree,
+while the HashTable has to calculate the HashIndex for every element. Remove is
+shorter for a HashTable because it simply assigns the HashIndex to null or to
+the next element in the bucket, while the TreeMap has to re-balance every time 
+an element is removed.
+
+
+IntegerLarge.txt
+Putting in large number of elements takes more time for TreeMap because as the tree
+gets larger, height and complexity will increase, which takes up more time. The
+HashTable only needs to calculate the HashIndex and expand the table when necessary.
+Get takes more time for the TreeMap because it needs to traverse a very large tree.
+Remove takes more time for the TreeMap because it needs to re-balance every time an
+element is removed.
+
+
+StringSmall.txt
+This is the same as IntegerSmall.txt, except that the HashTable takes less time to
+get elements compared to the TreeMap. This could be because the hashcode calculation
+for strings could take less time than the integers with many digits
+
+
+StringLarge.txt
+This is the same concept as IntegerLarge.txt, except for the put method. Put takes 
+longer for the HashTable probably because it takes more time to compute the hashcode
+for Strings
+
+
+In general, memory usage by the HashTable will be lower than TreeMap when there are
+fewer Integers because there are fewer values stores in an array, compared to the
+larger memory of the RBT implementation. When there are a large number of elements 
+inserted, the HashTable will be larger due to its massive TableSize. Results may also
+be affected by the efficiency of the device this program was run on
